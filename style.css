@@ -1,0 +1,32 @@
+<style>
+/* --- Reset & Base --------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box;}
+body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:500;line-height:1;letter-spacing:.03em;background:#fff;color:#000;}
+a{color:inherit;text-decoration:none;position:relative;}
+a::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;opacity:0;transition:opacity .2s ease;}
+a:hover::after{opacity:1;}
+
+/* --- Layout --------------------------------------------------------- */
+header,footer{position:fixed;left:0;width:100%;padding:1.2rem 2rem;display:flex;justify-content:flex-end;gap:2rem;z-index:1000;}
+header{top:0;border-bottom:1px solid #dcdcdc;background:#fff;}
+footer{bottom:0;border-top:1px solid #dcdcdc;background:#fff;}
+
+/* --- Central Title -------------------------------------------------- */
+.site-title{
+position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+font-size:6vw;font-weight:700;letter-spacing:.05em;white-space:nowrap;
+pointer-events:none;user-select:none;
+}
+
+/* --- Hover Image Swap + Clickable ---------------------------------- */
+.hover-swap{position:relative;display:inline-block;cursor:pointer;}
+.hover-swap img{display:block;max-width:100%;height:auto;transition:opacity .4s ease;}
+.hover-swap img.hover{position:absolute;top:0;left:0;opacity:0;}
+.hover-swap:hover img.hover{opacity:1;}
+
+/* --- Responsive Tweaks --------------------------------------------- */
+@media(max-width:700px){
+header,footer{padding:1rem;gap:1.2rem;font-size:.9rem;}
+.site-title{font-size:12vw;}
+}
+</style>
